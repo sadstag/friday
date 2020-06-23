@@ -1,0 +1,9 @@
+- la bande son fait "ba ba ba"
+- la video fait "ga ga ga"
+- les yeux ouverts
+  - 98% entendent "da da da"
+  - ma femme entend "ba ba ba"
+    - elle est
+      - bizarre ?
+      - schyzophrène ?
+      - musicienne ?

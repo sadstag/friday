@@ -1,50 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Mezzé</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div id="slides" class="slides"></div>
+    </div>
 
-		<script src="js/reveal.js"></script>
+    <script>
+      const slideNames = [
+        "00-titre",
+        "01-nodemo",
+        "02-mots",
+        "ptolemee/00-titre",
+        "ptolemee/01-ennonce",
+        "ptolemee/02-dessin",
+        "ptolemee/03-pythagore",
+        "mots/serie1",
+        "sound/00-titre",
+        "sound/01-escalier",
+        "sound/02-mcgurk/00-titre",
+        "sound/02-mcgurk/01-video",
+        "sound/02-mcgurk/02-what",
+        "sound/03-microtonal",
+        "mots/serie2",
+        "courbelimite/00-titre",
+        "courbelimite/01-pi",
+        "courbelimite/02-sqrt2",
+        "mots/serie3",
+        "perec",
+        "escargot",
+        "mots/serie4",
+        "gifts/00-titre",
+        "gifts/01-pythagore",
+        "gifts/02-klein",
+        "mots/serie5",
+        "merci",
+      ];
+      const slides = document.getElementById("slides");
+      slideNames.forEach((slideName) => {
+        const elem = document.createElement("section");
+        elem.setAttribute("data-markdown", `markdown/${slideName}.md`);
+        elem.setAttribute("data-separator", "^##==##");
+        elem.setAttribute("data-separator-vertical", "^##--##");
+        elem.setAttribute("data-separator-notes", "^Note:");
+        slides.appendChild(elem);
+      });
+    </script>
+    <script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/highlight/highlight.js" },
+          { src: "plugin/notes/notes.js", async: true },
+        ],
+      });
+    </script>
+  </body>
 </html>
